@@ -1,0 +1,177 @@
+/* Global fixes for profile icon display issues */
+
+/* Super aggressive fix for navbar profile icon - will override everything */
+.navbar .profile-icon-btn {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background-color: #121212 !important;
+  color: #39ff14 !important;
+  border: 2px solid #39ff14 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  min-width: auto !important;
+  min-height: auto !important;
+  max-width: 40px !important;
+  max-height: 40px !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+}
+
+.navbar .profile-icon-btn:hover {
+  background-color: #39ff14 !important;
+  color: #121212 !important;
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.5) !important;
+}
+
+/* Super aggressive fix for the SVG icon */
+.navbar .profile-icon-btn .user-icon {
+  width: 16px !important;
+  height: 16px !important;
+  display: block !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  transform-origin: center center !important;
+  vertical-align: middle !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: 16px !important;
+  max-height: 16px !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  transform-box: fill-box !important;
+}
+
+/* Additional fixes for SVG paths to prevent stretching */
+.navbar .profile-icon-btn .user-icon path {
+  transform: scale(1) !important;
+  transform-origin: center !important;
+  fill: currentColor !important;
+  overflow: visible !important;
+  vector-effect: non-scaling-stroke !important;
+}
+
+/* Shared fixes across components */
+
+/* Fix for button focus states */
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(4, 231, 98, 0.4);
+}
+
+/* Fix for scrollable areas */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Fix for text overflow */
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Fix for loading states */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(26, 26, 46, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #04e762;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Fix for responsive issues */
+@media (max-width: 768px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .hidden-desktop {
+    display: none !important;
+  }
+}
+
+/* Fix for notification badges */
+.notification-badge {
+  background-color: #ff3860;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+/* Fix for transition animations */
+.fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+} 

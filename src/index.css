@@ -1,0 +1,243 @@
+/* Global CSS Variables */
+:root {
+  --color-black: #121212;
+  --color-neon-green: #39ff14;
+  --color-greenish-blue: #00e6e6;
+  --color-dark-gray: #1e1e1e;
+  --color-gray: #333333;
+  --color-light-gray: #777777;
+  --color-white: #ffffff;
+  --shadow-neon: 0 0 10px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.3);
+  --shadow-blue: 0 0 10px rgba(0, 230, 230, 0.5), 0 0 20px rgba(0, 230, 230, 0.3);
+  --glow-neon: 0 0 10px rgba(57, 255, 20, 0.7), 0 0 20px rgba(57, 255, 20, 0.5), 0 0 30px rgba(57, 255, 20, 0.3);
+  --glow-blue: 0 0 10px rgba(0, 230, 230, 0.7), 0 0 20px rgba(0, 230, 230, 0.5), 0 0 30px rgba(0, 230, 230, 0.3);
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Apply to all links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* For smoother animations and transforms */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Make sure images don't exceed container width */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Form elements styling */
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  border: none;
+}
+
+/* Basic container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Main content area */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Custom cursor effect (disable on mobile/touch) */
+@media (hover: hover) and (pointer: fine) {
+  .cursor-glow {
+    /* Removed custom cursor */
+  }
+}
+
+/* Add a glow to elements with the special class */
+.glow-effect {
+  position: relative;
+  z-index: 1;
+}
+
+.glow-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  background: var(--color-neon-green);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-effect:hover::before {
+  opacity: 0.15;
+  box-shadow: var(--glow-neon);
+}
+
+/* Import fonts - make sure this is loaded properly */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+/* CSS Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 1));
+  z-index: -1;
+  pointer-events: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neon-green);
+  box-shadow: 0 0 10px var(--color-neon-green);
+}
+
+/* Better text selection */
+::selection {
+  background-color: rgba(57, 255, 20, 0.3);
+  color: var(--color-white);
+  text-shadow: 0 0 5px var(--color-neon-green);
+}
+
+/* Improved focus styles */
+*:focus-visible {
+  outline: 2px solid var(--color-neon-green);
+  outline-offset: 2px;
+}
+
+/* Default transitions */
+a, button, input {
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Cursor effects */
+html {
+  /* Removed custom cursor */
+  cursor: auto;
+}
+
+a, button, [role="button"] {
+  /* Removed custom cursor */
+  cursor: pointer;
+}
+
+/* Smart loading indicator for async operations */
+.loading::after {
+  content: '';
+  animation: loadingDots 1.5s infinite;
+}
+
+@keyframes loadingDots {
+  0%, 20% { content: '.'; }
+  40%, 60% { content: '..'; }
+  80%, 100% { content: '...'; }
+}
+
+/* Accessibility improvements */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Route transition fix */
+.page-transition-active {
+  animation: fadein 0.3s ease;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Force proper unmounting */
+.unmounting {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+  pointer-events: none !important;
+}
+
+/* Additional reset for elements that might be causing issues */
+.reset-all {
+  all: initial !important;
+  * {
+    all: unset !important;
+  }
+}

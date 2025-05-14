@@ -1,0 +1,5 @@
+You'll need to add the following images to this directory:
+1. hero-image.jpg - A high-quality football/soccer training image
+2. soccer-field.jpg - A background image of a soccer field
+
+Or update the image paths in the CSS to point to your own images. 

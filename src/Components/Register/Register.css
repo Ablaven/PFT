@@ -1,0 +1,176 @@
+.register-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: #f8f9fa;
+}
+
+.register-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/src/assets/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.register-hero-content h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.register-hero-content p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.register-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.register-info, .register-form-container {
+  background-color: #222222;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  color: #f8f9fa;
+}
+
+.register-info h2, .register-form-container h2 {
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.program-summary {
+  margin: 30px 0;
+  padding: 20px;
+  background-color: #333333;
+  border-radius: 8px;
+  border-left: 4px solid #007BFF;
+}
+
+.program-details h4 {
+  color: #ffffff;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.program-price {
+  font-weight: 700;
+  color: #e63946;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.registration-process ol {
+  padding-left: 20px;
+}
+
+.registration-process li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #f8f9fa;
+}
+
+.form-group input, 
+.form-group select,
+.form-group textarea {
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #333;
+  color: #f8f9fa;
+}
+
+.form-group input:focus, 
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #007BFF;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+.submit-btn {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.submit-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  background-color: #3d1a1a;
+  color: #ff6b6b;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  border-left: 4px solid #e63946;
+}
+
+.success-message {
+  background-color: #1a3d1a;
+  color: #66de66;
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+  border-left: 4px solid #2e7d32;
+}
+
+.success-message h3 {
+  color: #4caf50;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .register-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .register-hero-content h1 {
+    font-size: 32px;
+  }
+  
+  .register-hero {
+    padding: 80px 20px;
+  }
+} 

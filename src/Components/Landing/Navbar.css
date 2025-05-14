@@ -1,0 +1,579 @@
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  padding: 0;
+  z-index: 1000;
+  background-color: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(18, 18, 18, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Container for the three main sections */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 80px;
+}
+
+/* Left Section - Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+.navbar-logo .logo-accent {
+  margin-left: 0.3rem;
+  color: var(--color-neon-green);
+  font-weight: 700;
+}
+
+/* Center Section - Navigation */
+.navbar-menu.desktop-menu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-items {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.nav-item {
+  position: relative;
+  margin: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.nav-item.dropdown.active .dropdown-toggle {
+  color: var(--color-neon-green);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 220px;
+  background: #121212;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 0.75rem 0;
+  margin-top: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.nav-item.dropdown.active .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  font-size: 0.95rem;
+  color: #fff;
+  padding: 0.5rem 1.25rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover, 
+.dropdown-toggle:hover,
+.dropdown-menu a:hover {
+  color: var(--color-neon-green);
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(57, 255, 20, 0.05);
+}
+
+/* Right Section - Login/Register buttons */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  justify-content: flex-end;
+  min-width: 220px;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--color-black);
+  color: var(--color-neon-green);
+  border: 2px solid var(--color-neon-green);
+  text-align: center !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-neon-green);
+  border-color: var(--color-neon-green);
+  color: var(--color-black);
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  margin-right: 0;
+  text-align: center !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-neon-green);
+  border-color: var(--color-neon-green);
+}
+
+/* Mobile menu toggle button */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+  margin-right: 1rem;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile menu (slides in from right) */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 85%;
+  max-width: 400px;
+  height: 100vh;
+  background-color: rgba(18, 18, 18, 0.95);
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem;
+  overflow-y: auto;
+  z-index: 1001;
+  transition: right 0.3s ease;
+  display: none;
+}
+
+.mobile-menu.active {
+  right: 0;
+  display: flex;
+}
+
+.menu-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.menu-close {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.navbar-logo.mobile {
+  font-size: 1.5rem;
+}
+
+.nav-buttons.mobile {
+  display: none;
+}
+
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+.menu-backdrop.active {
+  display: block;
+}
+
+/* Profile dropdown styles */
+.profile-container {
+  position: relative;
+}
+
+/* Completely rewritten profile icon button styles */
+.profile-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #121212;
+  color: #39ff14;
+  border: 2px solid #39ff14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0;
+  min-height: initial;
+  min-width: initial;
+  max-height: 40px;
+  max-width: 40px;
+}
+
+.profile-icon-btn:hover {
+  background-color: #39ff14;
+  color: #121212;
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+}
+
+/* Custom user icon inside the button */
+.profile-icon-btn .user-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  margin: 0;
+  transform-origin: center center;
+  vertical-align: middle;
+  min-width: 0;
+  min-height: 0;
+  max-width: 16px;
+  max-height: 16px;
+}
+
+/* Control SVG paths inside the icon */
+.profile-icon-btn .user-icon path {
+  transform: scale(1);
+  transform-origin: center;
+  fill: currentColor;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 220px;
+  background: #121212;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  z-index: 1000;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+
+.profile-divider {
+  height: 1px;
+  background-color: #333;
+  margin: 0;
+}
+
+.profile-dropdown-item {
+  display: block;
+  padding: 12px 15px;
+  font-size: 0.95rem;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.profile-dropdown-item:hover {
+  background-color: rgba(57, 255, 20, 0.1);
+  color: var(--color-neon-green);
+}
+
+.logout-btn {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-neon-green);
+  font-weight: 500;
+}
+
+.logout-btn:hover {
+  background-color: rgba(57, 255, 20, 0.1);
+}
+
+/* Additional styles to ensure dropdown indicators are completely removed */
+.dropdown-toggle, .nav-link.dropdown-toggle, button.dropdown-toggle {
+  /* Remove any potential arrows from buttons */
+  background-image: none !important;
+  padding-right: 0.75rem !important; /* Override any potential padding added for arrows */
+}
+
+.dropdown-toggle:before, 
+.dropdown-toggle:after,
+.nav-link.dropdown-toggle:before,
+.nav-link.dropdown-toggle:after,
+button.dropdown-toggle:before,
+button.dropdown-toggle:after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .navbar-logo {
+    font-size: 1.5rem;
+  }
+  
+  .nav-item {
+    margin: 0 0.5rem;
+  }
+  
+  .nav-link, .dropdown-toggle {
+    padding: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 1.5rem;
+  }
+  
+  .navbar-menu.desktop-menu {
+    display: none;
+  }
+  
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .mobile-menu {
+    display: none;
+  }
+  
+  .mobile-menu.active {
+    display: flex;
+  }
+  
+  .mobile-menu .nav-items {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .mobile-menu .nav-item {
+    margin: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .mobile-menu .nav-item:last-child {
+    border-bottom: none;
+  }
+  
+  .mobile-menu .nav-link,
+  .mobile-menu .dropdown-toggle {
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    width: 100%;
+  }
+  
+  .mobile-menu .dropdown-menu {
+    position: relative;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0 0 0 1rem;
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 0;
+    background-color: rgba(18, 18, 18, 0.5);
+  }
+  
+  .mobile-menu .nav-item.dropdown.active .dropdown-menu {
+    max-height: 500px;
+    padding: 0.5rem 0 0.5rem 1rem;
+  }
+  
+  .mobile-menu .dropdown-menu a {
+    padding: 0.7rem 0;
+  }
+  
+  .mobile-menu .nav-buttons.mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+  }
+  
+  .mobile-menu .nav-buttons.mobile .btn {
+    width: 80%;
+    padding: 0.8rem;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .menu-backdrop.active {
+    display: block;
+  }
+  
+  .mobile-menu .profile-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+  
+  .mobile-menu .profile-dropdown {
+    position: relative;
+    top: 15px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .mobile-menu .nav-item.dropdown.active .dropdown-toggle {
+    color: var(--color-neon-green);
+  }
+}
+
+.nav-buttons.desktop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  white-space: nowrap;
+}
+
+/* Make sure buttons have proper width */
+.nav-buttons.desktop .btn {
+  min-width: 100px;
+  text-align: center;
+} 

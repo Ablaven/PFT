@@ -1,0 +1,129 @@
+/* Base styles for the entire app */
+:root {
+  --color-black: #121212;
+  --color-neon-green: #39ff14;
+  --color-greenish-blue: #00e6e6;
+  --color-dark-gray: #1e1e1e;
+  --color-gray: #333333;
+  --color-light-gray: #777777;
+  --color-white: #ffffff;
+  --shadow-neon: 0 0 10px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.3);
+  --shadow-blue: 0 0 10px rgba(0, 230, 230, 0.5), 0 0 20px rgba(0, 230, 230, 0.3);
+  --glow-neon: 0 0 10px rgba(57, 255, 20, 0.7), 0 0 20px rgba(57, 255, 20, 0.5), 0 0 30px rgba(57, 255, 20, 0.3);
+  --glow-blue: 0 0 10px rgba(0, 230, 230, 0.7), 0 0 20px rgba(0, 230, 230, 0.5), 0 0 30px rgba(0, 230, 230, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  line-height: 1.5;
+}
+
+/* For sections that need full-width/height */
+.full-page {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Container for most content sections */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Remove default styles from links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mt-5 { margin-top: 2.5rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mb-5 { margin-bottom: 2.5rem; }
+
+/* Common animations */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Loading screen */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  z-index: 9999;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(57, 255, 20, 0.2);
+  border-radius: 50%;
+  border-top-color: var(--color-neon-green);
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-screen p {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-neon-green);
+  letter-spacing: 1px;
+}
+
+/* App container styles */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
