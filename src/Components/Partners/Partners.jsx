@@ -95,7 +95,7 @@ const Partners = () => {
     id: "premier-1",
     name: "Eat Well",
     logo: "/WhatsApp Image 2025-05-14 at 23.57.05_02505e51.jpg",
-    website: "https://eatwell.eg",
+    website: "https://www.canva.com/design/DAGnTuQasAk/aVMzjsyYEv5vsEombQ4luA/edit?utm_content=DAGnTuQasAk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
     description: "A Cairo-based health-focused food service offering affordable, personalized nutrition for athletes. Features both an app and physical stores with meals at just EGP 40-50.",
     location: "Cairo, Egypt",
     established: 2023,

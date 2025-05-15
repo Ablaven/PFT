@@ -400,7 +400,7 @@ const About = () => {
             <div className="team-grid">
               <div className="team-member">
                 <div className="member-photo">
-                  <img src="https://placehold.co/300x300/121212/39ff14?text=Adham" alt="Adham" />
+                  <img src="/WhatsApp Image 2025-05-14 at 23.13.19_83853c0a.jpg" alt="Adham" />
                 </div>
                 <h4>Adham</h4>
                 <h5>Founder & Director</h5>
@@ -409,7 +409,7 @@ const About = () => {
               
               <div className="team-member">
                 <div className="member-photo">
-                  <img src="https://placehold.co/300x300/121212/39ff14?text=Mazen" alt="Mazen" />
+                  <img src="WhatsApp Image 2025-05-15 at 08.43.59_241b4598.jpg" alt="Mazen" />
                 </div>
                 <h4>Mazen</h4>
                 <h5>Developer, Designer, and Researcher</h5>
